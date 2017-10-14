@@ -3,6 +3,7 @@
   <head>
     <title>10 PRINT</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src='script.js'></script>
     <style></style>
   </head>
   <body style='margin: 0; padding: 0; overflow: hidden;'>
@@ -11,11 +12,6 @@
   <script>
     var canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
-
-    var level1 = [[1, 2, 3],
-                  [2, 3, 2],
-                  [2, 1, 1]];
-
     canvas.width = $(window).width();
     canvas.height = $(window).height();
     for (var row = 0; row < canvas.height / 20; row++)
