@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>10 PRINT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style></style>
+  </head>
+  <body style='margin: 0; padding: 0; overflow: hidden;'>
+    <canvas id='canvas'></canvas>
+  </body>
+  <script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    var level1 = [[1, 2, 3],
+                  [2, 3, 2],
+                  [2, 1, 1]];
+
+    canvas.width = $(window).width();
+    canvas.height = $(window).height();
+    for (var row = 0; row < canvas.height / 20; row++)
+      for (var col = 0; col < canvas.width / 20; col++) {
+        if (Math.floor(Math.random()*2) < 1) {
+          ctx.beginPath();
+          ctx.moveTo(col*20, row*20);
+          ctx.lineTo(col*20+20, row*20+20);
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = 'rgb(255, 0, 0)';
+          ctx.stroke();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(col*20+20, row*20);
+          ctx.lineTo(col*20, row*20+20);
+          ctx.lineWidth = 1;
+          ctx.strokeStyle = 'rgb(255, 0, 0)';
+          ctx.stroke();
+        }
+
+      }
+  </script>
+</html>
